@@ -1,0 +1,24 @@
+body { font-family: "Inter", system-ui, -apple-system, sans-serif; margin: 0; color: #222; }
+
+header,footer{background:#111;color:#fff;text-align:center;padding:1rem}
+main      { min-height:calc(100vh - 128px); display:grid; place-items:center }
+
+.auth-form{ display:grid; gap:1rem; width:min(100%,320px) }
+@media (min-width:640px){ .auth-form{width:400px} }
+
+.social-login{ display:flex; gap:.5rem }
+
+button,input{
+  font:inherit; padding:.5rem .75rem; border:1px solid #ccc; border-radius:.375rem;
+  transition:.3s; cursor:pointer;
+}
+button     { background:#3b82f6; color:#fff; border:none }
+button:hover{ filter:brightness(1.1) }
+button:focus,input:focus{ outline:2px solid #3b82f6; outline-offset:2px }
+
+input:invalid:not(:focus):not(:placeholder-shown){ border-color:#dc2626 }
+
+@keyframes shake{ 25%,75%{transform:translateX(-4px)} 50%{transform:translateX(4px)} }
+.error-shake{ animation:shake .3s }
+
+.visually-hidden{ position:absolute;width:1px;height:1px;clip:rect(0 0 0 0);overflow:hidden }
